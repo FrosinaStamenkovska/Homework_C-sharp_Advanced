@@ -11,8 +11,14 @@ namespace Models
 {
     public class CarCenter : ICarWash, IGasPump, IRepairService
     {
-        public List<Vehicle> Vehicles = new List<Vehicle>();
-        public int NumberOfServices = 0;
+        private List<Vehicle> Vehicles { get; set; }
+        public int NumberOfServices { get; set; }
+
+        public CarCenter()
+        {
+            Vehicles = new List<Vehicle>();
+            NumberOfServices = 0;
+        }
 
         public void PrintVehicles()
         {
